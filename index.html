@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkrivMittCV – Skapa CV & personligt brev med AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f7f7f7;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    textarea, input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      background-color: #0070f3;
+      color: white;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0058c7;
+    }
+  </style>
+</head>
+<body>
+  <h1>SkrivMittCV</h1>
+  <form method="POST" action="https://skrivmittcv-backend.vercel.app/api/submit">
+    <label for="name">Namn</label>
+    <input type="text" name="name" required />
+
+    <label for="experience">Din erfarenhet eller utbildning</label>
+    <textarea name="experience" rows="3" required></textarea>
+
+    <label for="job">Jobbannons (klistra in här)</label>
+    <textarea name="job" rows="6" required></textarea>
+
+    <label for="tone">Tonalitet</label>
+    <select name="tone">
+      <option value="neutral">Neutral</option>
+      <option value="självsäker">Självsäker</option>
+      <option value="ödmjuk">Ödmjuk</option>
+      <option value="formell">Formell</option>
+    </select>
+
+    <button type="submit">Skapa ansökan</button>
+  </form>
+</body>
+</html>
